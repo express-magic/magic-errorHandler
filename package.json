@@ -1,0 +1,10 @@
+{
+  "name": "magic-errorHandler",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./errorHandler.js",
+  "dependencies": {
+    "magic-log": "git://github.com/express-magic/magic-log",
+    "express": "^4.10.1"
+  }
+}
