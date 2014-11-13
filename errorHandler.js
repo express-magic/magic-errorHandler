@@ -6,19 +6,11 @@ var express = require('express')
   , log     = require('magic-log')
 ;
 
-handler.use(function(req, res, next) {
-  var err = {
-      status: 404
-    , message: 'Page not found'
-  };
-
-  next(err, req, res, next);
-});
-
-// production error handler
-// no stacktraces leaked to user
 handler.use(function(err, req, res, next) {
-  next(err, req, res, next);
+  if ( err.status === 404 ) {
+    return res.send('404 error');
+  }
+  res.send('error');
 });
 
 module.exports = handler;
