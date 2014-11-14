@@ -7,9 +7,15 @@ var express = require('express')
 ;
 
 handler.use(function (req, res, next) {
-  req.params.page = '404';
+  var app  = req.app
+    , r404 = app.get('404page') || '404'
+  ;
+  log.warn('404 error page called, page was:', req.params.page);
+  req.params.page = r404;
+
   views.render.page(req, res, function(err) {
-    if ( err ) { return next(err); }
+    log.error('404 page template for host not found');
+    if ( err ) { next(err); }
   });
 });
 
