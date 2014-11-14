@@ -1,21 +1,21 @@
 'use strict';
 var express = require('express')
   , path    = require('path')
-  , handler = express.Router()
+  , handler = express()
   , log     = require('magic-log')
+  , views   = require('magic-views')
 ;
+
 handler.use(function (req, res, next) {
-  var err = { status: 404 };
-  log.error('404 called');
-  next(err, req, res, next);
+  req.params.page = '404';
+  views.render.page(req, res, function(err) {
+    if ( err ) { return next(err); }
+  });
 });
 
 handler.use(function(err, req, res, next) {
-  if ( err.status === 404 ) {
-    log.error('404 called');
-    return res.send('404 error');
-  }
   log.error('500 called, err:', err);
-  res.send('500 server error');
+  res.send('500 server error.');
 });
+
 module.exports = handler;
