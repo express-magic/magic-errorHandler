@@ -5,6 +5,7 @@
   "main": "./errorHandler.js",
   "dependencies": {
     "magic-log": "git://github.com/express-magic/magic-log",
+    "magic-views": "git://github.com/express-magic/magic-views",
     "express": "^4.10.1"
   }
 }
