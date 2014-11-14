@@ -3,7 +3,7 @@ var express = require('express')
   , path    = require('path')
   , handler = express()
   , log     = require('magic-log')
-  , views   = require('magic-views')
+  , view   = require('magic-view')
 ;
 
 handler.use(function (req, res, next) {
@@ -14,7 +14,7 @@ handler.use(function (req, res, next) {
   req.params.page = r404;
   res.status(404);
 
-  views.render.page(req, res, function(err) {
+  view.render.page(req, res, function(err) {
     log.error('404 page template for host not found');
     if ( err ) { next(err); }
   });
