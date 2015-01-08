@@ -17,7 +17,7 @@ exports.handle404 = function (req, res, next) {
   log.warn('404 error page called, page was:', req.params.page);
   req.params.page = p404;
   res.status(404);
-  view.render.page(req, res, function(err) {
+  view.page(req, res, function(err) {
     log.error('404 page template for host not found');
     if ( err ) { next(err); }
   });
