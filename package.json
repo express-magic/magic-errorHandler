@@ -4,8 +4,8 @@
   "private": true,
   "main": "./errorHandler.js",
   "dependencies": {
-    "express": "^4.10.7",
-    "magic-log": "git://github.com/express-magic/magic-log",
-    "magic-view": "git://github.com/express-magic/magic-view"
+    "express": "file:../express",
+    "magic-log": "file:../magic-log",
+    "magic-view": "file:../magic-view"
   }
 }
