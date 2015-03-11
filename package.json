@@ -2,9 +2,12 @@
   "name": "magic-errorHandler",
   "version": "0.0.1",
   "private": true,
-  "main": "./errorHandler.js",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "babel src/ --out-file index.js --source-maps"
+  },
   "dependencies": {
-    "express": "file:../../node_modules/express",
+    "express": "~4.0.0",
     "magic-log": "file:../magic-log",
     "magic-view": "file:../magic-view"
   }
