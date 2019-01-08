@@ -7,7 +7,7 @@
     "prepublish": "babel src/ --out-file index.js --source-maps"
   },
   "dependencies": {
-    "express": "~4.0.0",
+    "express": "~4.16.4",
     "magic-log": "file:../magic-log",
     "magic-view": "file:../magic-view"
   }
